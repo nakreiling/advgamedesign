@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 227dae2ff6705f04f9dc41111541319f
 ModelImporter:
-  serializedVersion: 23
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Alpha_Joints
     100002: Alpha_Surface
@@ -73,6 +73,60 @@ ModelImporter:
     100134: mixamorig:Spine1
     100136: mixamorig:Spine2
     100138: //RootNode
+    100140: node_id10
+    100142: node_id11
+    100144: node_id12
+    100146: node_id13
+    100148: node_id14
+    100150: node_id15
+    100152: node_id16
+    100154: node_id17
+    100156: node_id18
+    100158: node_id19
+    100160: node_id20
+    100162: node_id21
+    100164: node_id22
+    100166: node_id23
+    100168: node_id24
+    100170: node_id25
+    100172: node_id26
+    100174: node_id27
+    100176: node_id28
+    100178: node_id29
+    100180: node_id30
+    100182: node_id31
+    100184: node_id32
+    100186: node_id33
+    100188: node_id34
+    100190: node_id35
+    100192: node_id36
+    100194: node_id37
+    100196: node_id38
+    100198: node_id39
+    100200: node_id4
+    100202: node_id40
+    100204: node_id41
+    100206: node_id42
+    100208: node_id43
+    100210: node_id44
+    100212: node_id45
+    100214: node_id46
+    100216: node_id47
+    100218: node_id48
+    100220: node_id49
+    100222: node_id5
+    100224: node_id50
+    100226: node_id51
+    100228: node_id52
+    100230: node_id53
+    100232: node_id54
+    100234: node_id55
+    100236: node_id58
+    100238: node_id58 1
+    100240: node_id6
+    100242: node_id7
+    100244: node_id8
+    100246: node_id9
     400000: Alpha_Joints
     400002: Alpha_Surface
     400004: mixamorig:Head
@@ -143,10 +197,80 @@ ModelImporter:
     400134: mixamorig:Spine1
     400136: mixamorig:Spine2
     400138: //RootNode
+    400140: node_id10
+    400142: node_id11
+    400144: node_id12
+    400146: node_id13
+    400148: node_id14
+    400150: node_id15
+    400152: node_id16
+    400154: node_id17
+    400156: node_id18
+    400158: node_id19
+    400160: node_id20
+    400162: node_id21
+    400164: node_id22
+    400166: node_id23
+    400168: node_id24
+    400170: node_id25
+    400172: node_id26
+    400174: node_id27
+    400176: node_id28
+    400178: node_id29
+    400180: node_id30
+    400182: node_id31
+    400184: node_id32
+    400186: node_id33
+    400188: node_id34
+    400190: node_id35
+    400192: node_id36
+    400194: node_id37
+    400196: node_id38
+    400198: node_id39
+    400200: node_id4
+    400202: node_id40
+    400204: node_id41
+    400206: node_id42
+    400208: node_id43
+    400210: node_id44
+    400212: node_id45
+    400214: node_id46
+    400216: node_id47
+    400218: node_id48
+    400220: node_id49
+    400222: node_id5
+    400224: node_id50
+    400226: node_id51
+    400228: node_id52
+    400230: node_id53
+    400232: node_id54
+    400234: node_id55
+    400236: node_id58
+    400238: node_id58 1
+    400240: node_id6
+    400242: node_id7
+    400244: node_id8
+    400246: node_id9
     2100000: Alpha_Body_MAT
     2100002: Alpha_Joints_MAT
+    2100004: Material_51
+    2100006: Material_53
+    2100008: Material_63
+    2100010: Material_64
+    2300000: node_id58
+    2300002: node_id58 1
+    2300004: node_id5
+    2300006: node_id6
+    3300000: node_id58
+    3300002: node_id58 1
+    3300004: node_id5
+    3300006: node_id6
     4300000: Alpha_Surface
     4300002: Alpha_Joints
+    4300004: node_id58
+    4300006: node_id58
+    4300008: node_id5
+    4300010: node_id6
     7400000: mixamo.com
     9500000: //RootNode
     13700000: Alpha_Joints
@@ -202,8 +326,6 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
