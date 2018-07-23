@@ -5,40 +5,42 @@ using UnityEngine;
 public class PlayerRayCasting : MonoBehaviour {
 
     public float distanceToSee;
-
-    //anything the player touches/collides with will be stored in this variable
-    RaycastHit WhatIHit;
-
-        GameObject cube;
+    public RaycastHit whatIHit;
+    public GameObject player;
 
 	// Use this for initialization
 	void Start () {
+        //find the game object that has the Player tag
+        player = GameObject.FindWithTag("Player");
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
         Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
 
-        if (Input.GetMouseButtonDown(0))
+        //if player interacts with a collider from other objects
+        if (Physics.Raycast(this.transform.position, transform.forward, out whatIHit, distanceToSee))
         {
-            Debug.Log("Pressed primary button");
-            Destroy(WhatIHit.collider.gameObject);
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            Debug.Log("Pressed secondary button");
-        }
-        if (Input.GetMouseButtonDown(2))
-        {
-            Debug.Log("Pressed middle click");
-        }
+            
+            //if player presses E
+            if(Input.GetKeyDown (KeyCode.E))
+            {
+                Debug.Log("I picked up " + whatIHit.collider.gameObject.name);
 
-        /*if(Physics.Raycast(this.transform.position, this.transform.forward, out WhatIHit, distanceToSee))
-        {
-            Debug.Log("I touched " + WhatIHit.collider.gameObject.name);
-            Destroy(WhatIHit.collider.gameObject);
-        } */
+                //check if the object the player is colliding with has a keyCard tag
+                if (whatIHit.collider.tag == "KeyCards")
+                {
+                    //accesses the keycards script and destroy the object if the key E is pressed
+                    if (whatIHit.collider.gameObject.GetComponent<KeyCards>().key == KeyCards.Keycards.RedKey)
+                    {
+                        player.GetComponent<Inventory>().hasRedKey = true;
+                        Destroy(whatIHit.collider.gameObject);
+                    }
+                }
+
+            }
+        }
+		
 	}
 }
