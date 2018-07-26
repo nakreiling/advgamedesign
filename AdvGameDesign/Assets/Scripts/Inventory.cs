@@ -5,4 +5,5 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
     public bool hasRedKey, hasGreyKey, hasBrownKey;
+  
 }

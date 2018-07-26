@@ -6,7 +6,7 @@ public class WeaponSelect : MonoBehaviour {
 
 
         
-        public int selectedWeapon = 0;
+        public static int selectedWeapon = 0;
 
     // Use this for initialization
     void Start()
@@ -18,7 +18,7 @@ public class WeaponSelect : MonoBehaviour {
         // Update is called once per frame
         void Update()
         {
-        selectedWeapon = 0;
+        
             int previousWeaponSelected = selectedWeapon;
 
             if (Input.GetAxis("Mouse ScrollWheel") > 0f)
