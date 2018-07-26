@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: pistol_arm_animator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Pull_Trigger
+  - m_Name: Object01|Object01Action
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -48,7 +48,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101567622168868120
+--- !u!1101 &1101484665859801552
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: Object01|Object01Action
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102712770264034372}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.03596792
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &1101842263064057410
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,23 +80,23 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Pull_Trigger
+    m_ConditionEvent: Object01|Object01Action
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102712156055700888}
+  m_DstState: {fileID: 1102114791110331716}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.04102362
+  m_TransitionDuration: 0.039326195
   m_TransitionOffset: 0
-  m_ExitTime: 0.0011361453
-  m_HasExitTime: 1
+  m_ExitTime: 0.00011305514
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &1102712156055700888
+--- !u!1102 &1102114791110331716
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -81,7 +105,8 @@ AnimatorState:
   m_Name: Object01|Object01Action
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: 1101484665859801552}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -107,7 +132,7 @@ AnimatorState:
   m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101567622168868120}
+  - {fileID: 1101842263064057410}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -135,15 +160,15 @@ AnimatorStateMachine:
     m_State: {fileID: 1102712770264034372}
     m_Position: {x: 216, y: 132, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102712156055700888}
-    m_Position: {x: 216, y: 264, z: 0}
+    m_State: {fileID: 1102114791110331716}
+    m_Position: {x: 232.03683, y: 247.91669, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: -168, y: 264, z: 0}
+  m_EntryPosition: {x: 36, y: 228, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102712770264034372}

@@ -287,11 +287,12 @@ ModelImporter:
     7400002: Pistol_Entry
     7400004: Desktop|Object01Action
     7400006: Object01|Desktop:BodyAction
-    7400008: Object01|Object01Action
+    7400008: onject01|Object01Action
     7400010: Desktop|DesktopAction
     7400012: Fire
     7400014: Pistol_Idle
-    7400016: Desktop|DesktopAction (3)
+    7400016: PistolShoot
+    7400018: Object01|Object01Action
     9500000: //RootNode
     13700000: Desktop:Body
   externalObjects:
@@ -333,8 +334,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Desktop|Desktop:BodyAction
-      takeName: Desktop|Desktop:BodyAction
+      name: Object01|Object01Action
+      takeName: Object01|Object01Action
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -445,7 +446,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Object01|Object01Action
+      name: onject01|Object01Action
       takeName: Object01|Object01Action
       firstFrame: 0
       lastFrame: 1
@@ -455,7 +456,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -540,34 +541,6 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Desktop|DesktopAction (3)
-      takeName: Desktop|DesktopAction
-      firstFrame: 0
-      lastFrame: 120
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
