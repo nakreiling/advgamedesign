@@ -533,7 +533,7 @@ ModelImporter:
       name: Pistol_Idle
       takeName: Desktop|DesktopAction
       firstFrame: 15
-      lastFrame: 120
+      lastFrame: 57
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
