@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - KeyCards
+<<<<<<< HEAD
+  - Enemy
+  - Damage
+=======
   - Dummy
+>>>>>>> 63c6cd109de198bcea0a6be7f3fcb3407244a429
   layers:
   - Default
   - TransparentFX
