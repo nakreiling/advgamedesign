@@ -5972,7 +5972,6 @@ GameObject:
   - component: {fileID: 1755345192}
   - component: {fileID: 1755345191}
   - component: {fileID: 1755345193}
-  - component: {fileID: 1755345194}
   - component: {fileID: 1755345190}
   m_Layer: 0
   m_Name: Main Camera
@@ -6059,19 +6058,6 @@ MonoBehaviour:
   sensHorizontal: 10
   sensVertical: 10
   _rotationX: 0
---- !u!114 &1755345194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1755345189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a434428850e865641b77ba8e5fab5a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToSee: 3
-  player: {fileID: 0}
 --- !u!1 &1756516057
 GameObject:
   m_ObjectHideFlags: 0
@@ -7578,6 +7564,26 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114593128879657640, guid: 81820d75452fa85499264f67c0e49d6e,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114593128879657640, guid: 81820d75452fa85499264f67c0e49d6e,
+        type: 2}
+      propertyPath: moniesText
+      value: 
+      objectReference: {fileID: 1848293415}
+    - target: {fileID: 114593128879657640, guid: 81820d75452fa85499264f67c0e49d6e,
+        type: 2}
+      propertyPath: isDead
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114593128879657640, guid: 81820d75452fa85499264f67c0e49d6e,
+        type: 2}
+      propertyPath: cameraTrans
+      value: 
+      objectReference: {fileID: 1755345192}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81820d75452fa85499264f67c0e49d6e, type: 2}
   m_IsPrefabAsset: 0
