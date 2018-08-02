@@ -9,13 +9,15 @@ public class PlayerRayCasting : MonoBehaviour
     public Camera cam;
     public LayerMask LayerMask;
     public static bool isHit;
+    public Animator anim;
 
     // Use this for initialization
     void Start()
     {
         //find the game object that has the Player tag
         //player = GameObject.FindWithTag("Player");
-        isHit= false;
+        setHit(false);
+        anim = GetComponent<Animator>();
 
     }
 
@@ -35,17 +37,15 @@ public class PlayerRayCasting : MonoBehaviour
                 Debug.Log("Raycast initiated");
                 if (hit.collider.gameObject.tag == "YBot")
                 {
-                    Debug.Log("I shot someone.");
+                    Debug.Log("I shot a person.");
                     setHit(true);
-                    Debug.Log(hit.collider.gameObject.name);
+                    anim.SetBool("GetUpFromBack", true);
+                    Debug.Log(getIsHit().ToString());
                     Debug.DrawRay(start, dir, Color.red, 10.0f);
                 }
                 else
                 {
                     Debug.Log("I missed");
-                    
-                   
-                    Debug.Log(hit.collider.gameObject.name);
                     Debug.DrawRay(start, dir, Color.red, 10f);
 
                 }

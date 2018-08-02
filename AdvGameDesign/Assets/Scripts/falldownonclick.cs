@@ -28,6 +28,7 @@ public class falldownonclick : MonoBehaviour
         bones = gameObject.GetComponentsInChildren<Rigidbody>();
         anim = GetComponent<Animator>();
         isDead = false;
+        anime.SetBool("GetUpFromback", false);
         
 
     }
@@ -35,15 +36,14 @@ public class falldownonclick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
-        if (Input.GetButton("Fire1") && PlayerRayCasting.getIsHit())
+        if (Input.GetButton("Fire1") && PlayerRayCasting.getIsHit() == true)
         {
+            Debug.Log("Killing Ragdoll");
             killRagdoll();
             counter = 0;
-           // PlayerRayCasting.getIsHit();
-            anime.SetBool("GetUpFromBelly", true);
+            // PlayerRayCasting.getIsHit();
+            //anime.SetBool("GetUpFromBack", true);
+            anime.SetBool("GetUpFromBack", false);
             if (count < 1)
             {
                 if (WeaponSelect.selectedWeapon == 0)
@@ -68,27 +68,19 @@ public class falldownonclick : MonoBehaviour
         else if (counter >= 180)
         {
             isDead = false;
-            //anim.SetBool("GetUpFromBelly", true);
-          
+        
             restoreRagdoll();
 
         }
         else
         {
-            anime.SetBool("GetUpFromBelly", false);
+            anime.SetBool("GetUpFromBack", false);
             count = 0;
             counter++;
             body.velocity = cameraTrans.forward * 0f;
         }
-
-        
-        
-       
-        
-         
-        
-
     }
+
     void killRagdoll()
     {
 
@@ -115,7 +107,7 @@ public class falldownonclick : MonoBehaviour
         }
          
         anim.enabled = true;
-        anim.SetBool("GetUpFromBelly", true);
+        anim.SetBool("GetUpFromBack", true);
     }
     
 }
