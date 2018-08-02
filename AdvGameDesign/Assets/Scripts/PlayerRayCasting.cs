@@ -1,58 +1,68 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class PlayerRayCasting : MonoBehaviour {
+public class PlayerRayCasting : MonoBehaviour
+{
 
-    public float distanceToSee;
-    public RaycastHit whatIHit;
-    public GameObject player;
+    public Camera cam;
+    public LayerMask LayerMask;
+    public static bool isHit;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         //find the game object that has the Player tag
-        player = GameObject.FindWithTag("Player");
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
+        //player = GameObject.FindWithTag("Player");
+        isHit= false;
 
-        //if player interacts with a collider from other objects
-        if (Physics.Raycast(this.transform.position, transform.forward, out whatIHit, distanceToSee))
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        if (Input.GetButton("Fire1"))
         {
+            Debug.Log("Mouse clicked");
+            Vector3 start = cam.transform.position;
+            Vector3 dir = cam.transform.forward * 100f;
+            RaycastHit hit;
 
-            Debug.Log("I touched something");
-            
-            //if player presses E
-            if(Input.GetKeyDown (KeyCode.E))
+            if (Physics.Raycast(start, dir, out hit, Mathf.Infinity))
             {
-                Debug.Log("I picked up " + whatIHit.collider.gameObject.name);
-
-                //check if the object the player is colliding with has a keyCard tag
-                if (whatIHit.collider.tag == "KeyCards")
+                Debug.Log("Raycast initiated");
+                if (hit.collider.gameObject.tag == "YBot")
                 {
-                    //accesses the keycards script and destroy the object if the key E is pressed
-                    if (whatIHit.collider.gameObject.GetComponent<KeyCards>().key == KeyCards.Keycards.RedKey)
-                    {
-                        player.GetComponent<Inventory>().hasRedKey = true;
-                        Destroy(whatIHit.collider.gameObject);
-                    }
-                    if (whatIHit.collider.gameObject.GetComponent<KeyCards>().key == KeyCards.Keycards.GreyKey)
-                    {
-                        player.GetComponent<Inventory>().hasRedKey = true;
-                        Destroy(whatIHit.collider.gameObject);
-                    }
-                    if (whatIHit.collider.gameObject.GetComponent<KeyCards>().key == KeyCards.Keycards.BrownKey)
-                    {
-                        player.GetComponent<Inventory>().hasRedKey = true;
-                        Destroy(whatIHit.collider.gameObject);
-                    }
+                    Debug.Log("I shot someone.");
+                    setHit(true);
+                    Debug.Log(hit.collider.gameObject.name);
+                    Debug.DrawRay(start, dir, Color.red, 10.0f);
                 }
+                else
+                {
+                    Debug.Log("I missed");
+                    
+                   
+                    Debug.Log(hit.collider.gameObject.name);
+                    Debug.DrawRay(start, dir, Color.red, 10f);
 
+                }
             }
+            Debug.DrawRay(start, dir, Color.red, 10f);
+            //EditorApplication.isPaused = true;
         }
-		
-	}
+    }
+
+    public static void setHit(bool var)
+    {
+        isHit = var;
+
+    }
+
+    public static bool getIsHit()
+    {
+        return isHit;
+    }
 }

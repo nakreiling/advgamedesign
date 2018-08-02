@@ -38,10 +38,11 @@ public class falldownonclick : MonoBehaviour
 
 
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && PlayerRayCasting.getIsHit())
         {
             killRagdoll();
             counter = 0;
+           // PlayerRayCasting.getIsHit();
             anime.SetBool("GetUpFromBelly", true);
             if (count < 1)
             {
@@ -106,7 +107,7 @@ public class falldownonclick : MonoBehaviour
 
     void restoreRagdoll()
     {
-        
+        PlayerRayCasting.setHit(false);
        
         foreach (Rigidbody ragdoll in bones)
         {
