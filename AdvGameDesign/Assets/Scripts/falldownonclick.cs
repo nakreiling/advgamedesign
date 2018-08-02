@@ -15,6 +15,9 @@ public class falldownonclick : MonoBehaviour
     public Animator anim;
     public bool isDead;
     public int counter;
+    public Transform cameraTrans;
+    public Rigidbody body;
+    
 
     // Use this for initialization
     void Start()
@@ -44,6 +47,8 @@ public class falldownonclick : MonoBehaviour
             {
                 if (WeaponSelect.selectedWeapon == 0)
                 {
+                    body.AddForce (cameraTrans.forward * 1000f);
+
                     monies += 10;
                 }
                 else if (WeaponSelect.selectedWeapon == 1)
@@ -63,6 +68,7 @@ public class falldownonclick : MonoBehaviour
         {
             isDead = false;
             //anim.SetBool("GetUpFromBelly", true);
+          
             restoreRagdoll();
 
         }
@@ -71,6 +77,7 @@ public class falldownonclick : MonoBehaviour
             anime.SetBool("GetUpFromBelly", false);
             count = 0;
             counter++;
+            body.velocity = cameraTrans.forward * 0f;
         }
 
         
