@@ -22,6 +22,8 @@ public class PlayerRayCasting : MonoBehaviour {
         //if player interacts with a collider from other objects
         if (Physics.Raycast(this.transform.position, transform.forward, out whatIHit, distanceToSee))
         {
+
+            Debug.Log("I touched something");
             
             //if player presses E
             if(Input.GetKeyDown (KeyCode.E))
@@ -33,6 +35,16 @@ public class PlayerRayCasting : MonoBehaviour {
                 {
                     //accesses the keycards script and destroy the object if the key E is pressed
                     if (whatIHit.collider.gameObject.GetComponent<KeyCards>().key == KeyCards.Keycards.RedKey)
+                    {
+                        player.GetComponent<Inventory>().hasRedKey = true;
+                        Destroy(whatIHit.collider.gameObject);
+                    }
+                    if (whatIHit.collider.gameObject.GetComponent<KeyCards>().key == KeyCards.Keycards.GreyKey)
+                    {
+                        player.GetComponent<Inventory>().hasRedKey = true;
+                        Destroy(whatIHit.collider.gameObject);
+                    }
+                    if (whatIHit.collider.gameObject.GetComponent<KeyCards>().key == KeyCards.Keycards.BrownKey)
                     {
                         player.GetComponent<Inventory>().hasRedKey = true;
                         Destroy(whatIHit.collider.gameObject);
