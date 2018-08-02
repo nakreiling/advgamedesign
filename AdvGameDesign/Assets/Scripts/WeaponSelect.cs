@@ -5,8 +5,9 @@ using UnityEngine;
 public class WeaponSelect : MonoBehaviour {
 
 
-        
-        public static int selectedWeapon = 0;
+
+    public static int selectedWeapon = 0;
+    public static int count = 0;
 
     // Use this for initialization
     void Start()
@@ -31,10 +32,10 @@ public class WeaponSelect : MonoBehaviour {
             }
             if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
-                if (selectedWeapon <= transform.childCount - 1)
-                    selectedWeapon = 0;
+                if (selectedWeapon <= 0)
+                    selectedWeapon = transform.childCount - 1;
                 else
-                    selectedWeapon++;
+                    selectedWeapon--;
 
             }
             if (previousWeaponSelected != selectedWeapon)

@@ -18,12 +18,14 @@ public class AnimController : MonoBehaviour {
 
             anim.SetBool("Punch", true);
             anim.SetBool("Object01|Object01Action", true);
+           
         }
 
         else
         {
             anim.SetBool("Punch", false);
             anim.SetBool("Object01|Object01Action", false);
+        
         }
 	}
 }
