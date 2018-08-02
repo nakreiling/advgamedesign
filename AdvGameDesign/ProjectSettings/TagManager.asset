@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - KeyCards
+  - Dummy
   layers:
   - Default
   - TransparentFX
