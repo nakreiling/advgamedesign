@@ -24,6 +24,7 @@ public class AnimController : MonoBehaviour {
         {
             anim.SetBool("Punch", false);
             anim.SetBool("Object01|Object01Action", false);
+        
         }
 	}
 }
