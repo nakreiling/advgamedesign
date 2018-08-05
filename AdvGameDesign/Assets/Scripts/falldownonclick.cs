@@ -7,12 +7,10 @@ public class falldownonclick : MonoBehaviour
 {
 
     Animator anime;
-
     public static int monies;
     private int count;
     public Text moniesText;
     public Component[] bones;
-    public Animator anim;
     public bool isDead;
     public int counter;
     public Transform cameraTrans;
@@ -26,7 +24,7 @@ public class falldownonclick : MonoBehaviour
         monies = 0;
         moniesText.text = "Money: " + monies.ToString();
         bones = gameObject.GetComponentsInChildren<Rigidbody>();
-        anim = GetComponent<Animator>();
+        anime = GetComponent<Animator>();
         isDead = false;
         anime.SetBool("GetUpFromback", false);
         
@@ -43,7 +41,6 @@ public class falldownonclick : MonoBehaviour
             counter = 0;
             // PlayerRayCasting.getIsHit();
             //anime.SetBool("GetUpFromBack", true);
-            anime.SetBool("GetUpFromBack", false);
             if (count < 1)
             {
                 if (WeaponSelect.selectedWeapon == 0)
@@ -93,21 +90,23 @@ public class falldownonclick : MonoBehaviour
 
         
 
-        anim.enabled = false;
+        anime.enabled = false;
         
     }
 
     void restoreRagdoll()
     {
-        PlayerRayCasting.setHit(false);
-       
+        //PlayerRayCasting.setHit(false);
+        anime.SetBool("standUp", true);
+
+        /*
         foreach (Rigidbody ragdoll in bones)
         {
             ragdoll.isKinematic = true;
-        }
-         
-        anim.enabled = true;
-        anim.SetBool("GetUpFromBack", true);
+        }*/
+
+        //anime.enabled = true;
+        //anime.SetBool("GetUpFromBack", true);
     }
     
 }

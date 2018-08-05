@@ -9,22 +9,23 @@ public class PlayerRayCasting : MonoBehaviour
     public Camera cam;
     public LayerMask LayerMask;
     public static bool isHit;
-    public Animator anim;
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
         //find the game object that has the Player tag
         //player = GameObject.FindWithTag("Player");
-        setHit(false);
         anim = GetComponent<Animator>();
+        anim.SetBool("fallDown", false);
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        anim.SetBool("FallDown", false);
         if (Input.GetButton("Fire1"))
         {
             Debug.Log("Mouse clicked");
@@ -38,8 +39,8 @@ public class PlayerRayCasting : MonoBehaviour
                 if (hit.collider.gameObject.tag == "YBot")
                 {
                     Debug.Log("I shot a person.");
-                    setHit(true);
-                    anim.SetBool("GetUpFromBack", true);
+                    anim.SetBool("fallDown", true);
+                    //anim.SetBool("GetUpFromBack", true);
                     Debug.Log(getIsHit().ToString());
                     Debug.DrawRay(start, dir, Color.red, 10.0f);
                 }
