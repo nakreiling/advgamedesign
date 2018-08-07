@@ -12,14 +12,20 @@ public class AnimController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+   
         if (Input.GetButton("Fire1"))
         {
+
             anim.SetBool("Punch", true);
+            anim.SetBool("Object01|Object01Action", true);
+           
         }
 
         else
         {
             anim.SetBool("Punch", false);
+            anim.SetBool("Object01|Object01Action", false);
+        
         }
 	}
 }
