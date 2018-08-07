@@ -7,7 +7,6 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: ragdoll animation
   serializedVersion: 5
-<<<<<<< HEAD
   m_AnimatorParameters:
   - m_Name: FallDown
     m_Type: 4
@@ -21,9 +20,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-=======
-  m_AnimatorParameters: []
->>>>>>> master
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -37,7 +33,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
-<<<<<<< HEAD
 --- !u!114 &114594826862513824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -50,39 +45,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1101 &1101819369496698892
-=======
---- !u!1101 &1101444498099016650
->>>>>>> master
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-<<<<<<< HEAD
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: isDead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102232057356221300}
-=======
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102862202579122052}
->>>>>>> master
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-<<<<<<< HEAD
   m_ExitTime: 0.75
   m_HasExitTime: 0
-=======
-  m_ExitTime: 0.9849699
-  m_HasExitTime: 1
->>>>>>> master
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -117,12 +98,7 @@ AnimatorState:
   m_Name: idle
   m_Speed: 1
   m_CycleOffset: 0
-<<<<<<< HEAD
   m_Transitions: []
-=======
-  m_Transitions:
-  - {fileID: 1101444498099016650}
->>>>>>> master
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 1
@@ -138,34 +114,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-<<<<<<< HEAD
-=======
---- !u!1102 &1102862202579122052
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: falling down
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dff24d4d454647743800e20c22e04361, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
->>>>>>> master
 --- !u!1102 &1102957045895938318
 AnimatorState:
   serializedVersion: 5
@@ -201,14 +149,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102232057356221300}
-<<<<<<< HEAD
     m_Position: {x: 300, y: 120, z: 0}
-=======
-    m_Position: {x: 312, y: 136, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102862202579122052}
-    m_Position: {x: 361.6775, y: 242.45212, z: 0}
->>>>>>> master
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101819369496698892}

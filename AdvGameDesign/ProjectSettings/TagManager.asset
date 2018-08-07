@@ -7,6 +7,10 @@ TagManager:
   - KeyCards
   - Dummy
   - YBot
+  - Weapon01
+  - Weapon02
+  - Weapon03
+  - Weapon04
   layers:
   - Default
   - TransparentFX
@@ -16,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - YBot Layer
-  - 
+  - Store
   - 
   - 
   - 
@@ -43,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Front
+    uniqueID: 2523505557
     locked: 0
