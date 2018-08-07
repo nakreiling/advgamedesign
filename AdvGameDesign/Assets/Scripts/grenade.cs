@@ -9,6 +9,7 @@ public class grenade : MonoBehaviour {
     public float radius = 5f;
     public float force = 700f;
     public GameObject explosionEffect;
+    public AudioClip explosion;
 	// Use this for initialization
 	void Start () {
         countdown = delay;
@@ -28,6 +29,7 @@ public class grenade : MonoBehaviour {
     void Explode()
     {
         Instantiate(explosionEffect, transform.position, transform.rotation);
+        SoundManager.instance.PlaySingle(explosion);
         Collider[] collidersToDestroy= Physics.OverlapSphere(transform.position, radius);
         foreach (Collider nearbyObject in collidersToDestroy)
         {
@@ -44,11 +46,13 @@ public class grenade : MonoBehaviour {
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                if(rb.gameObject.tag == "YBot"&& falldownonclick.explosionHappens == false)
+                if(rb.gameObject.tag == "YBot")
                 {
                     
                     Debug.Log("Explosion hit dummy");
                     falldownonclick.explosionHappens = true;
+                    Debug.Log(falldownonclick.explosionHappens+ "YA FOOO");
+
                 }
                 
                 rb.AddExplosionForce(force, transform.position, radius);
@@ -57,6 +61,7 @@ public class grenade : MonoBehaviour {
        
             Debug.Log("BOOM!");
         Destroy(gameObject, 1);
+        grenadeThrower.grenadeThrown = false;
         //hasExploded = false;
         
     }

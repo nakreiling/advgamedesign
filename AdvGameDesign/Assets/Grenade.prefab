@@ -586,7 +586,7 @@ MeshCollider:
   m_GameObject: {fileID: 1926743508154476}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -626,6 +626,7 @@ MonoBehaviour:
   force: 200
   explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 2}
+  explosion: {fileID: 8300000, guid: bebc2d53f2f60504bab9a17b395d0d5d, type: 3}
 --- !u!136 &136315784510839056
 CapsuleCollider:
   m_ObjectHideFlags: 1

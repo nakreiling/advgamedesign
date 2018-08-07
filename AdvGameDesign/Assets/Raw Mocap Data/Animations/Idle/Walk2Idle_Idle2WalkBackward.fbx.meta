@@ -193,7 +193,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Walk2Idle_Idle2WalkBackward
       takeName: _89_90B_a_U1_M_P_Walk2Idle_Idle2WalkBackward_Fb_p0_No_0_0
-      firstFrame: 0
+      firstFrame: 44
       lastFrame: 359
       wrapMode: 0
       orientationOffsetY: 0

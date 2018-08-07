@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class falldownonclick : MonoBehaviour
+public class TMRfalldownonclick : MonoBehaviour
 {
 
     Animator anime;
+    public int transition;
+
+    
 
     public static int monies;
     private int count;
@@ -18,21 +21,13 @@ public class falldownonclick : MonoBehaviour
     public Transform cameraTrans;
     public Rigidbody body;
     public static bool explosionHappens;
-    public bool flag;
-    public int transition;
-
-    public AudioClip blob;
-    public AudioClip punch;
-    public AudioClip gunShot;
-    public AudioClip laserShot;
-    public AudioClip shotgun_fire_1;
-
+    
 
     // Use this for initialization
     void Start()
     {
+        StartCoroutine(MyCoroutine());
         explosionHappens = false;
-        flag = false;
         anime = gameObject.GetComponent<Animator>();
         monies = 0;
         moniesText.text = "Money: " + monies.ToString();
@@ -42,69 +37,66 @@ public class falldownonclick : MonoBehaviour
         anim.SetBool("isDead", true);
 
     }
+    IEnumerator MyCoroutine()
+    {
+        if (explosionHappens == true)
+        {
+            KillRagdollExplosion();
+            yield return 3;
+            restoreRagdoll();
+        }
+    }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(explosionHappens);
-        if(explosionHappens==true)
-        {
-            flag = true;
-        }
-        //cheat
-        if (Input.GetKeyDown("m"))
-        {
-            giveMonies();
-        }
+        MyCoroutine();
+       // if(explosionHappens == true)
+       // {
+            
+         //   Debug.Log("Message from grenade.cs recieved");
+         //   monies += 200;
+          //  KillRagdollExplosion();
 
-     // if(explosionHappens == true)
-      //  {
-       //     flag = true;
         //}
 
-        //(explosionHappens==true) used to be in if statement
-        if ((Input.GetButton("Fire1") && PlayerRayCasting.getIsHit() == true)|| flag == true)
+
+
+        if (Input.GetButton("Fire1") && PlayerRayCasting.getIsHit() == true)
         {
-            Debug.Log(explosionHappens);
             
             counter = 0;
             //anime.SetBool("isDead", true);
             if (count < 1)
             {
-                if (WeaponSelect.selectedWeapon == 0 && PlayerRayCasting.rayDistance < 5)
+                if (WeaponSelect.selectedWeapon == 0)
                 {
                     killRagdoll(0);
                     //  body.AddForce (cameraTrans.forward * 1000f);
-                    SoundManager.instance.PlaySingle(punch);
+
                     monies += 10;
                 }
                 else if (WeaponSelect.selectedWeapon == 1)
                 {
                     killRagdoll(100);
                     //body.AddForce(cameraTrans.forward * 3000f);
-                    SoundManager.instance.PlaySingle(gunShot);
                     monies += 40;
                 }
 
                 else if (WeaponSelect.selectedWeapon == 2)
                 {
                     killRagdoll(500);
-                    // body.AddForce(cameraTrans.forward * 7000f);
-                    SoundManager.instance.PlaySingle(laserShot);
+                   // body.AddForce(cameraTrans.forward * 7000f);
                     monies += 70;
                 }
-                else if (flag == true) //weapon 3 grenade
+                else if (WeaponSelect.selectedWeapon == 3)
                 {
-                    Debug.Log("ALMOST THER BUD!");
-                    killRagdoll(200);
 
-                }
-                else if (WeaponSelect.selectedWeapon == 4)
-                {
-                    killRagdoll(1000);
+                   // killRagdoll(500);
                     // body.AddForce(cameraTrans.forward * 7000f);
-                    SoundManager.instance.PlaySingle(shotgun_fire_1);
-                    monies += 150;
+                   // monies += 70;
                 }
                 count += 1;
             }
@@ -114,7 +106,10 @@ public class falldownonclick : MonoBehaviour
         {
             isDead = false;
             //anim.SetBool("GetUpFromBelly", true);
-           
+
+            transition = Random.Range(0,9);
+
+            anim.SetInteger("Transition", transition);
 
             restoreRagdoll();
 
@@ -137,24 +132,18 @@ public class falldownonclick : MonoBehaviour
             // ragdoll.rotation= transform.rotation;
             ragdoll.isKinematic = false;
             
-            if(flag == true)
-            {
-                ragdoll.AddExplosionForce(200f, transform.position, 7);
-                Debug.Log("Yoyoyoyoyyooyoyyo");
-                flag = false;
-            }
-            else
+
+
             ragdoll.AddForce(cameraTrans.forward * var);
           
         }
         anim.enabled = false;
-        explosionHappens = false;
        
 
     }
     public void KillRagdollExplosion()
     {
-
+        monies += 200;
         anime.SetBool("isDead", false);
         foreach (Rigidbody ragdoll in bones)
         {
@@ -174,35 +163,15 @@ public class falldownonclick : MonoBehaviour
 
     void restoreRagdoll()
     {
-        if (!PlayerRayCasting.blobPlayed)
-        {
-            SoundManager.instance.PlaySingle(blob);
-            PlayerRayCasting.blobPlayed = true;
-        }
-
         PlayerRayCasting.setHit(false);
         foreach (Rigidbody ragdoll in bones)
         {
             ragdoll.isKinematic = true;
         }
-
+         
+        
         anim.SetBool("isDead", false);
-        transition = Random.Range(0, 10);
-        Debug.Log(transition + "HAI");
-        anim.SetInteger("Transition", transition);
-
         anim.enabled = true;
     }
     
-    void giveMonies()
-    {
-        monies += 500;
-
-    }
-}
-public class BodyPart
-{
-    public Transform transform;
-    public Vector3 storedPosition;
-    public Quaternion storedRotation;
 }
